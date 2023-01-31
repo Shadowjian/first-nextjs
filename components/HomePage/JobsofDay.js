@@ -22,7 +22,7 @@ const JobsofDay = ({ employers, cat_list }) => {
   let filterEmployers = employers.filter(
     employer => employer.cat_of_industry === isSelected
   )
-  // console.log(filterEmployers)
+  console.log(cat_list)
 
   return (
     <JODContainer className="mt-5">

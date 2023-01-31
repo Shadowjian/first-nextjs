@@ -1,7 +1,7 @@
 import { useState } from "react"
 
 const useHooks = () => {
-  const [isSelected, setIsSelected] = useState(null)
+  const [isSelected, setIsSelected] = useState("building/construction")
 
   return { isSelected, setIsSelected }
 }
