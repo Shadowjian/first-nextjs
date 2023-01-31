@@ -1,18 +1,14 @@
-import create from 'zustand';
-import i18n from "i18next";
-import { initReactI18next } from 'react-i18next'; 
-import {
-    translationsEn,
-    translationsJa
-} from './translations';
-
+import { create } from "zustand"
+import i18n from "i18next"
+import { initReactI18next } from "react-i18next"
+import { translationsEn, translationsJa } from "./translations"
 
 i18n
   .use(initReactI18next) // passes i18n down to react-i18next
-  .init( {
+  .init({
     resources: {
       en: { translation: translationsEn },
-      ja: { translation: translationsJa },
+      ja: { translation: translationsJa }
     },
     lng: "en",
     fallBackLng: "en",
@@ -21,20 +17,18 @@ i18n
     }
   })
 
-
 export const usei18nStore = create((set, get) => ({
-    /* State */
-    language: '',
+  /* State */
+  language: "",
 
-    /* Computed */
+  /* Computed */
 
-    /* Functions */
-    onChangeTranslate: (event) => {
-        i18n.changeLanguage(event.target.value);
-        set(state => ({
-            ...state,
-            language: event.target.value
-        }))
-    }
-
+  /* Functions */
+  onChangeTranslate: event => {
+    i18n.changeLanguage(event.target.value)
+    set(state => ({
+      ...state,
+      language: event.target.value
+    }))
+  }
 }))
